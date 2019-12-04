@@ -1,0 +1,82 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "tslint-react",
+    "tslint-config-prettier"
+  ],
+  "linterOptions": {
+    "exclude": [
+      "node_modules/*",
+      "**/*.js",
+      "**/*.d.ts"
+    ]
+  },
+  "rules": {
+    "array-type": [
+      true,
+      "array"
+    ],
+    "ban": [
+      true,
+      {
+        "name": "Array",
+        "message": "tsstyle#array-constructor"
+      },
+      {
+        "name": "Boolean",
+        "message": "tsstyle#boolean-constructor"
+      }
+    ],
+    "curly": [
+      true,
+      "ignore-same-line"
+    ],
+    "interface-name": [
+      true,
+      "never-prefix"
+    ],
+    "jsdoc-format": false,
+    "member-access": [
+      true,
+      "no-public"
+    ],
+    "no-any": true,
+    "no-inferrable-types": true,
+    "no-namespace": [
+      true,
+      "allow-declarations"
+    ],
+    "switch-default": true,
+    "variable-name": [
+      false,
+      "check-format",
+      "ban-keywords",
+      "allow-leading-underscore",
+      "allow-trailing-underscore"
+    ],
+    "object-literal-sort-keys": false,
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "case-insensitive",
+        "module-source-path": "full",
+        "named-imports-order": "case-insensitive"
+      }
+    ],
+    "strict-boolean-expressions": [
+      true,
+      "allow-boolean-or-undefined"
+    ],
+    "triple-equals": true,
+    "strict-type-predicates": true,
+    "no-duplicate-imports": true,
+    "jsx-boolean-value": [
+      true,
+      "never"
+    ],
+    "jsx-key": true,
+    "jsx-no-lambda": false,
+    "jsx-no-string-ref": true,
+    "no-console": false
+  }
+}

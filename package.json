@@ -1,0 +1,89 @@
+{
+    "name": "witness",
+    "version": "1.0.0",
+    "description": "Web UI Tests for the Whisk applications.",
+    "files": [
+        "page-objects/*",
+        "tests/*"
+    ],
+    "scripts": {
+        "build": "npm run format && npm run lint && tsc",
+        "lint": "tslint -c tslint.json -p tsconfig.json",
+        "format": "prettier --write \"**/*.ts\"",
+        "track-coverage": "chmod +x ./node_modules/test-automation-framework/lib/track-coverage.sh && ./node_modules/test-automation-framework/lib/track-coverage.sh",
+        "mywhisk-ui-tests-smoketest-ios": "node_modules\\.bin\\testcafe \"browserstack:iPhone XS\" ./tests/**/*.test.ts -q -c 2 --skip-js-errors --fixture-meta app=MyWhiskUI --test-meta category=smoketest -r spec,samsungnext-reporter:file.json",
+        "mywhisk-ui-tests-happypath-ios": "node_modules\\.bin\\testcafe \"browserstack:iPhone XS\" ./tests/**/*.test.ts -q -c 2 --skip-js-errors --fixture-meta app=MyWhiskUI --test-meta category=happypath -r spec,samsungnext-reporter:file.json",
+        "mywhisk-ui-tests-regression-ios": "node_modules\\.bin\\testcafe \"browserstack:iPhone XS\" ./tests/**/*.test.ts -q -c 2 --skip-js-errors --fixture-meta app=MyWhiskUI --test-meta category=regression -r spec,samsungnext-reporter:file.json",
+        "mywhisk-ui-tests-smoketest-windows": "node_modules\\.bin\\testcafe \"browserstack:Chrome@75.0:Windows 10\" ./tests/**/*.test.ts -q -c 2 --skip-js-errors --fixture-meta app=MyWhiskUI --test-meta category=smoketest -r spec,samsungnext-reporter:file.json",
+        "mywhisk-ui-tests-happypath-windows": "node_modules\\.bin\\testcafe \"browserstack:Chrome@75.0:Windows 10\" ./tests/**/*.test.ts -q -c 2 --skip-js-errors --fixture-meta app=MyWhiskUI --test-meta category=happypath -r spec,samsungnext-reporter:file.json",
+        "mywhisk-ui-tests-regression-windows": "node_modules\\.bin\\testcafe \"browserstack:Chrome@75.0:Windows 10\" ./tests/**/*.test.ts -q -c 2 --skip-js-errors --fixture-meta app=MyWhiskUI --test-meta category=regression -r spec,samsungnext-reporter:file.json",
+        "mywhisk-ui-tests-smoketest": "npm run mywhisk-ui-tests-smoketest-ios && npm run mywhisk-ui-tests-smoketest-windows",
+        "mywhisk-ui-tests-happypath": "npm run mywhisk-ui-tests-happypath-ios && npm run mywhisk-ui-tests-happypath-windows",
+        "mywhisk-ui-tests-regression": "npm run mywhisk-ui-tests-regression-ios && npm run mywhisk-ui-tests-regression-windows",
+        "pi-ui-tests-smoketest-ios": "node_modules\\.bin\\testcafe \"browserstack:iPhone XS\" ./tests/**/*.test.ts -q -c 2 --skip-js-errors --fixture-meta app=Whisk-PI-UI --test-meta category=smoketest -r spec,samsungnext-reporter:file.json",
+        "pi-ui-tests-happypath-ios": "node_modules\\.bin\\testcafe \"browserstack:iPhone XS\" ./tests/**/*.test.ts -q -c 2 --skip-js-errors --fixture-meta app=Whisk-PI-UI --test-meta category=happypath -r spec,samsungnext-reporter:file.json",
+        "pi-ui-tests-regression-ios": "node_modules\\.bin\\testcafe \"browserstack:iPhone XS\" ./tests/**/*.test.ts -q -c 2 --skip-js-errors --fixture-meta app=Whisk-PI-UI --test-meta category=regression -r spec,samsungnext-reporter:file.json",
+        "pi-ui-tests-smoketest-windows": "node_modules\\.bin\\testcafe \"browserstack:Chrome@75.0:Windows 10\" ./tests/**/*.test.ts -q -c 2 --skip-js-errors --fixture-meta app=Whisk-PI-UI --test-meta category=smoketest -r spec,samsungnext-reporter:file.json",
+        "pi-ui-tests-happypath-windows": "node_modules\\.bin\\testcafe \"browserstack:Chrome@75.0:Windows 10\" ./tests/**/*.test.ts -q -c 2 --skip-js-errors --fixture-meta app=Whisk-PI-UI --test-meta category=happypath -r spec,samsungnext-reporter:file.json",
+        "pi-ui-tests-regression-windows": "node_modules\\.bin\\testcafe \"browserstack:Chrome@75.0:Windows 10\" ./tests/**/*.test.ts -q -c 2 --skip-js-errors --fixture-meta app=Whisk-PI-UI --test-meta category=regression -r spec,samsungnext-reporter:file.json",
+        "pi-ui-tests-smoketest": "npm run pi-ui-tests-smoketest-windows && npm run pi-ui-tests-smoketest-ios",
+        "pi-ui-tests-happypath": "npm run pi-ui-tests-happypath-windows && npm run pi-ui-tests-happypath-ios",
+        "pi-ui-tests-regression": "npm run pi-ui-tests-regression-windows && npm run pi-ui-tests-regression-ios",
+        "sdk-ui-tests-smoketest-ios": "node_modules\\.bin\\testcafe \"browserstack:iPhone XS\" ./tests/**/*.test.ts -q -c 2 --skip-js-errors --fixture-meta app=Whisk-SDK-UI --test-meta category=smoketest -r spec,samsungnext-reporter:file.json",
+        "sdk-ui-tests-happypath-ios": "node_modules\\.bin\\testcafe \"browserstack:iPhone XS\" ./tests/**/*.test.ts -q -c 2 --skip-js-errors --fixture-meta app=Whisk-SDK-UI --test-meta category=happypath -r spec,samsungnext-reporter:file.json",
+        "sdk-ui-tests-regression-ios": "node_modules\\.bin\\testcafe \"browserstack:iPhone XS\" ./tests/**/*.test.ts -q -c 2 --skip-js-errors --fixture-meta app=Whisk-SDK-UI --test-meta category=regression -r spec,samsungnext-reporter:file.json",
+        "sdk-ui-tests-smoketest-windows": "node_modules\\.bin\\testcafe \"browserstack:Chrome@75.0:Windows 10\" ./tests/**/*.test.ts -q -c 2 --skip-js-errors --fixture-meta app=Whisk-SDK-UI --test-meta category=smoketest -r spec,samsungnext-reporter:file.json",
+        "sdk-ui-tests-happypath-windows": "node_modules\\.bin\\testcafe \"browserstack:Chrome@75.0:Windows 10\" ./tests/**/*.test.ts -q -c 2 --skip-js-errors --fixture-meta app=Whisk-SDK-UI --test-meta category=happypath -r spec,samsungnext-reporter:file.json",
+        "sdk-ui-tests-regression-windows": "node_modules\\.bin\\testcafe \"browserstack:Chrome@75.0:Windows 10\" ./tests/**/*.test.ts -q -c 2 --skip-js-errors --fixture-meta app=Whisk-SDK-UI --test-meta category=regression -r spec,samsungnext-reporter:file.json",
+        "sdk-ui-tests-smoketest": "npm run sdk-ui-tests-smoketest-windows && npm run sdk-ui-tests-smoketest-ios",
+        "sdk-ui-tests-happypath": "npm run sdk-ui-tests-happypath-windows && npm run sdk-ui-tests-happypath-ios",
+        "sdk-ui-tests-regression": "npm run sdk-ui-tests-regression-windows && npm run sdk-ui-tests-regression-ios"
+    },
+    "dependencies": {
+        "@types/dotenv": "^4.0.3",
+        "@types/node": "^9.6.55",
+        "dotenv": "^4.0.0",
+        "guid-typescript": "^1.0.9",
+        "lint-staged": "^9.5.0",
+        "md5": "^2.2.1",
+        "prettier": "^1.19.1",
+        "reflect-metadata": "^0.1.13",
+        "strip-ansi": "^5.2.0",
+        "stylelint": "^10.1.0",
+        "stylelint-config-recommended": "^2.2.0",
+        "stylelint-config-styled-components": "^0.1.1",
+        "stylelint-order": "^3.1.1",
+        "stylelint-processor-styled-components": "^1.9.0",
+        "test-automation-framework": "^1.0.74",
+        "testcafe-browser-provider-browserstack": "^1.10.1",
+        "testcafe-reporter-samsungnext-reporter": "^1.0.24",
+        "ts-node": "^5.0.1",
+        "ts-stopwatch": "0.0.4",
+        "tslint": "^5.20.1",
+        "tslint-config-prettier": "^1.18.0",
+        "tslint-react": "^4.1.0",
+        "typescript": "^3.7.2"
+    },
+    "prettier": {
+        "singleQuote": true,
+        "trailingComma": "es5"
+    },
+    "lint-staged": {
+        "*.{ts,tsx}": [
+            "tslint -p tslint-tsconfig.json --fix",
+            "stylelint",
+            "prettier --write",
+            "git add"
+        ],
+        "*.js": [
+            "eslint --fix",
+            "stylelint",
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "devDependencies": {
+        "husky": "^3.1.0",
+        "testcafe": "^1.7.0"
+    }
+}

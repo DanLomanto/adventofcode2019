@@ -1,0 +1,36 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "target": "es2017",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "outDir": ".build",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "lib": [
+      "esnext.asynciterable",
+      "es2015",
+      "es2016",
+      "es2017",
+      "dom"
+    ],
+    "resolveJsonModule": true,
+    "strict": true,
+  },
+  "exclude": [
+    "node_modules"
+  ],
+  "include": [
+    "test-framework",
+    "config",
+    "tests",
+    "reporter",
+    "test-runner",
+    "page-objects", "yea.js"
+  ]
+}

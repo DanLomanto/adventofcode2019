@@ -1,10 +1,9 @@
 {
-  "name": "witness",
+  "name": "adventofcode2019",
   "version": "1.0.0",
-  "description": "Web UI Tests for the Whisk applications.",
+  "description": "Advent of Code Exercises.",
   "files": [
-    "page-objects/*",
-    "tests/*"
+    "src/*"
   ],
   "scripts": {
     "build": "npm run format && npm run lint && tsc",

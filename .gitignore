@@ -8,24 +8,12 @@ lib-cov
 *.gz
 *.swp
 
-pids
-logs
-results
-tmp
-test-logs
-
-
-# Coverage reports
-coverage
-test-logs
-
 # API keys and secrets
 .env
 
 # Dependency directory
 node_modules
 bower_components
-
 
 # OS metadata
 .DS_Store
@@ -36,12 +24,3 @@ Thumbs.db
 
 # Ignore the config file
 config/test-settings.json
-
-# Ignore the node_modules dir.
-node_modules
-
-# Ignore the test results file
-TEST_RESULTS.json
-
-# screenshots dir
-screenshots
